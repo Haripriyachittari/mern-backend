@@ -16,7 +16,7 @@ const port = process.env.PORT;
 //middleware
 app.use(express.json());
 app.use(cors({
-    origin: ['https://goal-setter-mern.netlify.app/']
+    origin: ['*']
 }));
 
 app.use(express.urlencoded({ extended: false }));
