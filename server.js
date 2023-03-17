@@ -1,4 +1,6 @@
 const path = require("path");
+const cors = require('cors');
+
 const express = require("express");
 const goalRouter = require("./routes/goalRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -13,6 +15,9 @@ const port = process.env.PORT;
 
 //middleware
 app.use(express.json());
+app.use(cors({
+    origin: ['https://goal-setter-mern.netlify.app/']
+}));
 
 app.use(express.urlencoded({ extended: false }));
 
